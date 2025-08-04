@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Cute Lamp</title>
+ <style>
+ body {
+ background: #1e1e2f;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+ font-family: sans-serif;
+ }
+
+ .lamp-container {
+ position: relative;
+ text-align: center;
+ }
+
+ .lamp-base {
+ width: 60px;
+ height: 20px;
+ background: #555;
+ border-radius: 10px;
+ margin: 0 auto;
+ }
+
+ .lamp-stand {
+ width: 8px;
+ height: 100px;
+ background: #999;
+ margin: 0 auto;
+ }
+
+ .lamp-head {
+ width: 100px;
+ height: 50px;
+ background: #ffc;
+ border-radius: 50% 50% 0 0;
+ margin: 0 auto;
+ box-shadow: 0 0 30px rgba(255, 255, 150, 0);
+ transition: box-shadow 0.3s ease;
+ }
+
+ .lamp-head.on {
+ box-shadow: 0 30px 100px rgba(255, 255, 150, 0.6);
+ }
+
+ .switch-btn {
+ margin-top: 20px;
+ background: #ff8;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: bold;
+ transition: background 0.3s;
+ }
+
+ .switch-btn:hover {
+ background: #ffd;
+ }
+ </style>
+</head>
+<body>
+
+<div class="lamp-container">
+ <div class="lamp-head" id="lampHead"></div>
+ <div class="lamp-stand"></div>
+ <div class="lamp-base"></div>
+ <button class="switch-btn" onclick="toggleLamp()">Switch</button>
+</div>
+
+<script>
+ function toggleLamp() {
+ const lamp = document.getElementById('lampHead');
+ lamp.classList.toggle('on');
+ }
+</script>
+
+</body>
+</html>
